@@ -1,0 +1,67 @@
+# Welcome to Serverless!
+#
+# This file is the main config file for your service.
+# It's very minimal at this point and uses default values.
+# You can always add more config options for more control.
+# We've included some commented out config examples here.
+# Just uncomment any of them to get that config option.
+#
+# For full config options, check the docs:
+#    docs.serverless.com
+#
+# Happy Coding!
+
+service: serverless-snek
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: go1.x
+  lambdaHashingVersion: 20201221
+
+# you can overwrite defaults here
+# stage: dev
+# region: us-west-2
+
+package:
+  exclude:
+    - ./**
+  include:
+    - ./bin/**
+
+functions:
+  ping:
+    handler: bin/ping
+    events:
+      - httpApi:
+          path: /
+          method: get
+
+  start:
+    handler: bin/start
+    events:
+      - httpApi:
+          path: /start
+          method: post
+
+  move:
+    handler: bin/move
+    events:
+      - httpApi:
+          path: /move
+          method: post
+
+  end:
+    handler: bin/end
+    events:
+      - httpApi:
+          path: /end
+          method: post
+
+  world:
+    handler: bin/world
+    events:
+      - httpApi:
+          path: /world
+          method: get
