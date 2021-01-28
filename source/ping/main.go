@@ -4,7 +4,7 @@ import (
 	"context"
 	"encoding/json"
 
-	api "github.com/andey-robins/serverless-snek/api"
+	api "github.com/andey-robins/serverless-snek/Api"
 
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"

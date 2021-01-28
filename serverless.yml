@@ -58,10 +58,3 @@ functions:
       - httpApi:
           path: /end
           method: post
-
-  world:
-    handler: bin/world
-    events:
-      - httpApi:
-          path: /world
-          method: get
